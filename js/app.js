@@ -84,9 +84,13 @@ search.addEventListener("input", function () {
  
         let cardTitle = element.getElementsByTagName("h5")[0].innerText;
         //alert(ttl);
-        
-        // alert(cardTxt.value);
-        if (cardTxt.includes(inputVal) || cardTitle.includes(inputVal)) {
+       var s = cardTxt;
+        s=s.toLowerCase();
+        //alert(ttl);
+        var str = cardTitle;
+        str=str.toLowerCase();
+        //if(str.includes(inputVal))alert(str);
+        if (s.includes(inputVal) || str.includes(inputVal)) {
             element.style.display = "block";
         }
         else {
