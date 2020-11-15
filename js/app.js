@@ -31,7 +31,7 @@ if(addTxt.value=="" || addTxt.value==" " || addTxt.value=="  " || addTxt.value==
 function showNotes() {
     let notes = localStorage.getItem("notes");
     if (notes == null) {
-        notesObj = []; 
+        notesObj = [];
     }
     else {
         notesObj = JSON.parse(notes);
@@ -81,9 +81,12 @@ search.addEventListener("input", function () {
     let noteCards = document.getElementsByClassName('noteCard');
     Array.from(noteCards).forEach(function (element) {
         let cardTxt = element.getElementsByTagName("p")[0].innerText;
-
+ 
+        let cardTitle = element.getElementsByTagName("h5")[0].innerText;
+        //alert(ttl);
+        
         // alert(cardTxt.value);
-        if (cardTxt.includes(inputVal)) {
+        if (cardTxt.includes(inputVal) || cardTitle.includes(inputVal)) {
             element.style.display = "block";
         }
         else {
