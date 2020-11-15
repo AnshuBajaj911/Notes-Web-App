@@ -31,7 +31,7 @@ if(addTxt.value=="" || addTxt.value==" " || addTxt.value=="  " || addTxt.value==
 function showNotes() {
     let notes = localStorage.getItem("notes");
     if (notes == null) {
-        notesObj = [];
+        notesObj = []; 
     }
     else {
         notesObj = JSON.parse(notes);
